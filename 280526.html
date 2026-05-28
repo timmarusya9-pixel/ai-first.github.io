@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Инфографика отчёта по сообществу AI для бизнеса</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root{
+      --deep-blue:#1e3a5f;
+      --soft-blue:#3b82f6;
+      --teal:#0d9488;
+      --lavender:#8b5cf6;
+      --light-bg:#f8fafc;
+      --success:#10b981;
+      --warning:#f59e0b;
+      --danger:#ef4444;
+    }
+    body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f1f5f9;color:#0f172a;}
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#3b5998 100%);color:#fff;border-bottom-left-radius:2rem;border-bottom-right-radius:2rem;box-shadow:0 12px 30px rgba(30,58,95,.25)}
+    .hero .badge{background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.18)}
+    .section-card{background:#fff;border-radius:1.25rem;box-shadow:0 8px 20px rgba(0,0,0,.04);border:1px solid rgba(148,163,184,.18)}
+    .section-title{color:var(--deep-blue);font-weight:800}
+    .section-title i{color:var(--soft-blue)}
+    .divider{height:1px;background:linear-gradient(90deg,rgba(59,130,246,.35),rgba(13,148,136,.15),transparent);margin:1rem 0 1.25rem}
+    .metric-badge{background:#eef2ff;color:#4338ca;border-radius:999px;padding:.45rem .8rem;font-weight:700}
+    .positive{background:#d1fae5;color:#065f46;border-radius:.85rem;padding:.85rem 1rem}
+    .negative{background:#fee2e2;color:#991b1b;border-radius:.85rem;padding:.85rem 1rem}
+    .table-custom thead th{background:#f1f5f9;color:#334155}
+    .table-custom td,.table-custom th{vertical-align:top}
+    .small-muted{color:#64748b;font-size:.92rem}
+    .pill{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.35rem .7rem;font-size:.85rem;font-weight:700}
+    .pill.ok{background:#d1fae5;color:#065f46}
+    .pill.mid{background:#fef3c7;color:#92400e}
+    .pill.bad{background:#fee2e2;color:#991b1b}
+    .footer-link{color:#fff;text-decoration:underline;font-weight:700}
+    .chart-wrap{position:relative;height:320px}
+    .chart-wrap.sm{height:280px}
+    .list-check li{margin-bottom:.55rem}
+    .list-check li::marker{color:var(--soft-blue)}
+    .kpi-bar{height:12px;border-radius:999px;background:#e2e8f0;overflow:hidden}
+    .kpi-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--soft-blue),var(--teal))}
+    .sticky-note{background:#eff6ff;border-left:4px solid var(--soft-blue);border-radius:1rem;padding:1rem}
+    .tag{display:inline-block;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:.3rem .65rem;margin:.15rem .2rem;font-size:.85rem}
+    @media (max-width: 576px){
+      .hero{border-bottom-left-radius:1.25rem;border-bottom-right-radius:1.25rem}
+      .chart-wrap,.chart-wrap.sm{height:260px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero py-4 py-md-5 mb-4">
+    <div class="container">
+      <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-3">
+        <div>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge rounded-pill text-white px-3 py-2"><i class="fa-solid fa-chart-line me-1"></i> Аналитика сообщества</span>
+            <span class="badge rounded-pill text-white px-3 py-2"><i class="fa-solid fa-calendar-day me-1"></i> 28 05 26</span>
+          </div>
+          <h1 class="display-6 fw-bold mb-3">Инфографика отчёта: обложка, контент и стратегия роста</h1>
+          <p class="lead mb-3" style="max-width: 920px;">Сообщество хорошо позиционировано как экспертный источник, но не хватает конверсионной обложки, CTA, видео и лид‑магнитов для роста подписчиков.</p>
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            <span class="metric-badge"><i class="fa-solid fa-users me-1"></i> KPI: +40% подписчиков</span>
+            <span class="badge rounded-pill bg-white text-primary px-3 py-2"><i class="fa-solid fa-link me-1"></i> <a href="https://vk.com/ai_first" target="_blank" class="text-decoration-none fw-bold">vk.com/ai_first</a></span>
+          </div>
+        </div>
+        <div class="text-lg-end">
+          <div class="bg-white bg-opacity-10 rounded-4 p-3 p-md-4 border border-white border-opacity-10">
+            <div class="small text-uppercase opacity-75 mb-1">Ключевая метрика</div>
+            <div class="display-5 fw-bold mb-0">+40%</div>
+            <div class="opacity-75">цель по подписчикам</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pb-4">
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-clipboard-list me-2"></i>Краткое резюме</h2>
+      <div class="divider"></div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="negative h-100">
+            <strong>Главный барьер роста:</strong> обложка формально отражает экспертность и дружелюбный имидж, но не выполняет конверсионной функции — нет CTA, текст может обрезаться на мобиле.
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="positive h-100">
+            <strong>Сильная база:</strong> сообщество хорошо позиционировано как экспертный источник, но критически не хватает видео, лид‑магнитов, чётких CTA и рекламного продвижения.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-image me-2"></i>Анализ обложки</h2>
+      <div class="divider"></div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="table-responsive">
+            <table class="table table-bordered table-custom align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Блок</th>
+                  <th>Ожидание ЦА</th>
+                  <th>Что на обложке</th>
+                  <th>Соответствие</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Визуальный тон и эмоция</strong></td>
+                  <td>Деловой, уверенный, профессиональный тон</td>
+                  <td>Пастельные фиолетово‑бирюзовые тона, улыбающаяся женщина (30–40)</td>
+                  <td><span class="pill mid">Частично</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Сообщение и текст</strong></td>
+                  <td>Короткая чёткая выгода, имя, логотип</td>
+                  <td>«ИИ‑трансформация бизнеса с Ольгой Кошелевой. Автоматизация Консультация Менторинг»</td>
+                  <td><span class="pill mid">Частично</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Призыв к действию (CTA)</strong></td>
+                  <td>«Записаться на AI‑диагностику», лид‑магнит, кнопка</td>
+                  <td>CTA отсутствует</td>
+                  <td><span class="pill bad">Нет</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Техническая адаптация под ВК</strong></td>
+                  <td>Безопасная зона, читаемость, отсутствие перекрытий</td>
+                  <td>Центровой текст, слева фото женщины, справа абстрактная графика</td>
+                  <td><span class="pill bad">Риск</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Отстройка от демографии VK</strong></td>
+                  <td>Нейтральный/корпоративный визуал для предпринимателей 30–45</td>
+                  <td>Женский портрет и мягкая палитра лучше резонируют с женщинами 35–45</td>
+                  <td><span class="pill mid">Частично</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-wrap sm mb-3"><canvas id="coverChart"></canvas></div>
+          <div class="sticky-note mb-3">
+            <strong>Итоговый вердикт:</strong> текущая обложка отображает экспертность, но не конвертирует и частично не адаптирована под мобильные и под целевой сегмент предпринимателей.
+          </div>
+          <div class="positive mb-2"><strong>Что исправить:</strong> добавить benefit + CTA, усилить корпоративность, сместить портрет и текст в безопасную зону.</div>
+        </div>
+      </div>
+      <div class="mt-4">
+        <h3 class="h6 fw-bold text-primary mb-3">Конкретные правки</h3>
+        <ol class="list-check mb-0">
+          <li>Заменить фото на профессиональный портрет Ольги в деловом интерьере или фото команды/рабочего процесса.</li>
+          <li>Изменить текст на лаконичный benefit + CTA: «Освободите до 40% рабочего времени. Бесплатная AI‑диагностика — Записаться».</li>
+          <li>Добавить CTA‑блок справа от центра: кнопка‑визуал «Записаться на диагностику» с иконкой → и ссылкой в описании.</li>
+          <li>Сменить гамму на более корпоративную: тёмно‑синий / бирюзовый акцент + белый текст.</li>
+          <li>Сместить фотопортрет влево выше и поместить текст в безопасную центральную зону 600×300 px.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-bullseye me-2"></i>Портрет ЦА</h2>
+      <div class="divider"></div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="table-responsive">
+            <table class="table table-bordered table-custom align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Параметр</th>
+                  <th>Идеальный зритель обложки</th>
+                  <th>Реальная аудитория</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Возраст</strong></td><td>30–45 лет</td><td>Преимущественно женщины 35–45</td></tr>
+                <tr><td><strong>Роль</strong></td><td>Владелец МСБ или руководитель (HR/OPs/Prod)</td><td>Руководитель / HR / бизнес‑аналитик в МСП</td></tr>
+                <tr><td><strong>Мотивация</strong></td><td>Сокращение затрат/времени и ROI от автоматизации</td><td>Практическое внедрение ИИ, экономия времени и кейсы с ROI</td></tr>
+                <tr><td><strong>Ожидание от контента</strong></td><td>Конкретные кейсы, быстрые решения, продуктовые предложения</td><td>Длинные кейсы и продуктовые предложения</td></tr>
+                <tr><td><strong>Восприятие визуала</strong></td><td>Строгий, уверенный дизайн, нейтральные/корпоративные цвета</td><td>Женский образ и мягкая палитра</td></tr>
+                <tr><td><strong>География</strong></td><td>Эксперты и предприниматели 30–45</td><td>Вологда — основной город (10 из ~17)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-wrap mb-3"><canvas id="audienceChart"></canvas></div>
+          <div class="small-muted mb-2">Реальная аудитория смещена в сторону женщин 35–45 и региона Вологда.</div>
+          <div class="tag">женщины 35–45</div><div class="tag">Вологда</div><div class="tag">МСП</div><div class="tag">ROI</div><div class="tag">автоматизация</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-circle-check me-2"></i>Сильные и слабые стороны контента</h2>
+      <div class="divider"></div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="positive h-100">
+            <h3 class="h6 fw-bold mb-3"><i class="fa-solid fa-thumbs-up me-2"></i>Сильные стороны</h3>
+            <ol class="mb-0">
+              <li>Чёткая экспертная позиция и профессиональные кейсы.</li>
+              <li>Наличие продуктовых предложений (диагностика, инструменты).</li>
+              <li>Качественные длинные тексты, подтверждающие компетенцию.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="negative h-100">
+            <h3 class="h6 fw-bold mb-3"><i class="fa-solid fa-thumbs-down me-2"></i>Слабые стороны</h3>
+            <ol class="mb-0">
+              <li>Отсутствие видео и коротких форматов.</li>
+              <li>Нет системного CTA/воронки (лид‑магнит, подписка, быстрый способ связаться).</li>
+              <li>Непоследовательность в времени публикаций + отсутствие продвижения.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-people-arrows me-2"></i>Конкурентный анализ и лучшие практики</h2>
+      <div class="divider"></div>
+      <div class="table-responsive mb-3">
+        <table class="table table-bordered table-custom align-middle mb-0">
+          <thead>
+            <tr>
+              <th>Что есть у конкурентов</th>
+              <th>Чего нет у вас</th>
+              <th>Идеи для адаптации</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Видео‑формат, высокий темп публикаций, яркие hook‑титры и визуалы, бесплатный/низкобюджетный лид‑магнит</td>
+              <td>Видео, карусели и документы/файлы как лид‑магниты</td>
+              <td>Серия коротких видео «AI в 2 минуты»; лид‑магнит doc «Чек‑лист AI‑диагностики для бизнеса»</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="positive h-100"><strong>Гипотеза:</strong> если добавить регулярную рубрику‑видео + лид‑магнит, ER и привлечение новых подписчиков вырастет заметно.</div>
+        </div>
+        <div class="col-lg-6">
+          <div class="sticky-note h-100"><strong>Прогноз:</strong> +50–100% вовлечённости и прирост подписчиков в первые 2 месяца на 20–40% при минимальном таргет‑бюджете.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-clock me-2"></i>Tone of voice, время и форматы</h2>
+      <div class="divider"></div>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="chart-wrap sm mb-3"><canvas id="weekdayChart"></canvas></div>
+        </div>
+        <div class="col-lg-7">
+          <div class="table-responsive">
+            <table class="table table-bordered table-custom align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Параметр</th>
+                  <th>Рекомендация</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Tone of voice</strong></td><td>Экспертный, прагматичный, дружелюбно‑деловой</td></tr>
+                <tr><td><strong>Лучший день</strong></td><td>Понедельник (engagement_index 5)</td></tr>
+                <tr><td><strong>Хорошие окна</strong></td><td>Утро 9:00–11:00; пятница 10:00–14:00 для продающих постов</td></tr>
+                <tr><td><strong>Худшие дни</strong></td><td>Суббота и Воскресенье (индекс 0)</td></tr>
+                <tr><td><strong>Доп. тест</strong></td><td>Четверг 10:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-lightbulb me-2"></i>Гипотезы развития</h2>
+      <div class="divider"></div>
+      <div class="row g-3">
+        <div class="col-md-6 col-xl-4"><div class="section-card p-3 h-100"><strong>1. Видео+шортсы</strong><div class="small-muted mt-2">Еженедельное короткое видео (1–2 мин) увеличит охват и репосты; ожидаемый прирост ER +50% в два месяца.</div></div></div>
+        <div class="col-md-6 col-xl-4"><div class="section-card p-3 h-100"><strong>2. Лид‑магнит → подписка</strong><div class="small-muted mt-2">Бесплатный чек‑лист/mini‑аудит («AI‑чек‑лист — 10 точек автоматизации») увеличит конверсию посетителя → подписчик на 5–15%.</div></div></div>
+        <div class="col-md-6 col-xl-4"><div class="section-card p-3 h-100"><strong>3. Обложка + CTA</strong><div class="small-muted mt-2">Переделанная обложка с прямым CTA увеличит клики на группу и конверсию посетителей в подписчиков на 10–25%.</div></div></div>
+        <div class="col-md-6 col-xl-6"><div class="section-card p-3 h-100"><strong>4. Рекламный тест</strong><div class="small-muted mt-2">Таргет 3000–7000 RUB по аудитории предпринимателей 30–45 в крупных городах даст быстрый приток релевантной аудитории.</div></div></div>
+        <div class="col-md-6 col-xl-6"><div class="section-card p-3 h-100"><strong>5. Переработка закрепа</strong><div class="small-muted mt-2">Lead‑magnet‑пост с CTA повысит конверсию новых посетителей в подписчиков/лиды.</div></div></div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-calendar-week me-2"></i>Контент‑план на типовую неделю</h2>
+      <div class="divider"></div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-custom align-middle mb-0">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Сегмент</th>
+              <th>Тема</th>
+              <th>Заголовок</th>
+              <th>Формат</th>
+              <th>Тип контента</th>
+              <th>Функция</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Предприниматели/СЕО</td><td>Кейс ROI</td><td>Как мы сократили время обработки заявок на 70%: реальный кейс</td><td>Видео 1–2 мин</td><td>Кейс</td><td>Привлечение → вовлечение</td></tr>
+            <tr><td>2</td><td>HR/Рекрутеры</td><td>Продукт</td><td>ИИ‑Рекрутер: упаковка вакансии за 10 минут</td><td>Фото + link to market</td><td>Продуктовый пост</td><td>Конверсия (продажа)</td></tr>
+            <tr><td>3</td><td>Аналитики/техлиды</td><td>Практический гайд</td><td>Чек‑лист: 5 точек для быстрого пилота ИИ</td><td>Doc + фото</td><td>Lead magnet</td><td>Привлечение → подписка</td></tr>
+            <tr><td>4</td><td>Все</td><td>Образовательный</td><td>AI в 5 минут: как оценить готовность данных</td><td>Карусель / серия фото</td><td>Обучающий</td><td>Вовлечение → удержание</td></tr>
+            <tr><td>5</td><td>Предприниматели</td><td>Вебинар/мероприятие</td><td>Бесплатный разбор: где у вас прячется 40% времени</td><td>Анонс (photo + ссылка)</td><td>Промо</td><td>Лидогенерация</td></tr>
+            <tr><td>6</td><td>Клиенты/теплые лиды</td><td>Отзыв/кейсы</td><td>Результат клиента: сокращение FTE на 1,5 человека</td><td>Текст + фото клиента</td><td>Социальное доказательство</td><td>Прогрев → доверие</td></tr>
+            <tr><td>7</td><td>Все</td><td>Вовлечение</td><td>Вопрос к подписчикам: какая задача съедает у вас больше всего времени?</td><td>Опрос/карточка</td><td>Вовлекающий</td><td>Вовлечение + сбор инсайтов</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <h2 class="section-title h4 mb-0"><i class="fa-solid fa-bullseye-pointer me-2"></i>Шаги, KPI и A/B‑тесты</h2>
+      <div class="divider"></div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h3 class="h6 fw-bold text-primary mb-3">KPI для отслеживания через 2 недели</h3>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span>Новые подписчики</span><span>weekly net growth</span></div><div class="kpi-bar"><div class="kpi-fill" style="width:40%"></div></div></div>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span>Охват постов и средние просмотры</span><span>reach, views</span></div><div class="kpi-bar"><div class="kpi-fill" style="width:55%"></div></div></div>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span>CTR по ссылкам</span><span>клики на market/сайт</span></div><div class="kpi-bar"><div class="kpi-fill" style="width:35%"></div></div></div>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span>Количество скачиваний/запросов лид‑магнита</span><span>лид‑магнит</span></div><div class="kpi-bar"><div class="kpi-fill" style="width:30%"></div></div></div>
+          <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span>ER по постам</span><span>лайки+комменты+репосты / охват</span></div><div class="kpi-bar"><div class="kpi-fill" style="width:50%"></div></div></div>
+          <div class="mb-0"><div class="d-flex justify-content-between mb-1"><span>Количество сообщений в ЛС</span><span>заявки</span></div><div class="kpi-bar"><div class="kpi-fill" style="width:25%"></div></div></div>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="h6 fw-bold text-primary mb-3">Что A/B‑тестировать в первую очередь</h3>
+          <ul class="list-check mb-4">
+            <li>Обложка A vs B (с CTA vs без CTA).</li>
+            <li>Формат поста: короткое видео 60–90 секунд vs фото + текст.</li>
+            <li>Заголовок: число/выгода «Освободите 40% времени» vs вопрос «Где теряете время?».</li>
+            <li>Время публикации: Пн 10:00 vs Чт 10:00.</li>
+          </ul>
+          <div class="chart-wrap sm"><canvas id="kpiChart"></canvas></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hero py-4 mt-4">
+    <div class="container text-center">
+      <div class="mb-2 small opacity-75">Сообщество</div>
+      <a href="https://vk.com/ai_first" target="_blank" class="footer-link">ИИ для бизнеса: от аналитики до внедрения</a>
+      <div class="mt-2 small opacity-75">Краткая ссылка: vk.com/ai_first</div>
+    </div>
+  </footer>
+
+  <script>
+    const commonLegend = {
+      position: 'bottom',
+      labels: { usePointStyle: true, boxWidth: 10, boxHeight: 10, padding: 16 }
+    };
+    const gridColor = 'rgba(148,163,184,.22)';
+
+    new Chart(document.getElementById('coverChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Соответствие', 'Частично', 'Риск/нет'],
+        datasets: [{
+          data: [1, 3, 2],
+          backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
+          borderWidth: 0,
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        animation: { duration: 900 },
+        plugins: { legend: commonLegend }
+      }
+    });
+
+    new Chart(document.getElementById('audienceChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Женщины 35–45', 'Вологда', 'Эксперты 30–45', 'Мужчины‑предприниматели'],
+        datasets: [{
+          label: 'Смещение аудитории',
+          data: [10, 10, 7, 3],
+          backgroundColor: ['#3b82f6', '#0d9488', '#8b5cf6', '#94a3b8'],
+          borderRadius: 10,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: true,
+        animation: { duration: 900 },
+        scales: {
+          x: { grid: { color: gridColor }, ticks: { color: '#475569' } },
+          y: { grid: { display: false }, ticks: { color: '#475569' } }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    new Chart(document.getElementById('weekdayChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+        datasets: [{
+          label: 'Engagement index',
+          data: [5, 1.5, 1.2, 2, 2.3, 0, 0],
+          backgroundColor: ['#3b82f6','#94a3b8','#94a3b8','#0d9488','#8b5cf6','#ef4444','#ef4444'],
+          borderRadius: 10,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        animation: { duration: 900 },
+        scales: {
+          y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: '#475569' } },
+          x: { grid: { display: false }, ticks: { color: '#475569' } }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    new Chart(document.getElementById('kpiChart'), {
+      type: 'line',
+      data: {
+        labels: ['Подписчики', 'Охват', 'CTR', 'Лид‑магнит', 'ER', 'ЛС'],
+        datasets: [{
+          label: 'Текущий прогресс к 2 неделям',
+          data: [40, 55, 35, 30, 50, 25],
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59,130,246,.12)',
+          pointBackgroundColor: '#0d9488',
+          pointBorderColor: '#0d9488',
+          tension: .35,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        animation: { duration: 900 },
+        scales: {
+          y: { beginAtZero: true, max: 100, grid: { color: gridColor }, ticks: { color: '#475569' } },
+          x: { grid: { display: false }, ticks: { color: '#475569' } }
+        },
+        plugins: { legend: commonLegend }
+      }
+    });
+  </script>
+</body>
+</html>
