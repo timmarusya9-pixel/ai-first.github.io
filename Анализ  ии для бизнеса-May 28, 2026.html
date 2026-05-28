@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчёт</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --deep-blue: #1e3a5f;
+            --soft-blue: #3b82f6;
+            --teal: #0d9488;
+            --lavender: #8b5cf6;
+            --light-bg: #f8fafc;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f1f5f9;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #3b5998 100%);
+            color: white;
+            padding: 20px;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .table-custom th {
+            background-color: #f1f5f9;
+        }
+        .metric-badge {
+            background-color: #eef2ff;
+            color: #4338ca;
+            padding: 5px 10px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero text-center">
+    <h1>Отчёт по развитию сообщества</h1>
+    <p><strong>Дата:</strong> [дата]</p>
+    <p class="metric-badge">Ключевая метрика: Увеличение подписчиков на +40%</p>
+</div>
+
+<div class="container mt-4">
+    <!-- Краткое резюме -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-chart-line"></i> Итоговый вердикт</h2>
+        <p>Обложка и отсутствие видеоконтента/лид-магнитов — главные технические и стратегические барьеры роста подписчиков; при исправлении обложки, добавлении коротких видео и запуска простого лид-магнита можно получить заметный приток целевой аудитории.</p>
+    </div>
+    
+    <!-- Анализ обложки -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-image"></i> Анализ обложки</h2>
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>Блок</th>
+                    <th>Ожидание</th>
+                    <th>Фактическое</th>
+                    <th>Соответствие</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Визуальный тон и эмоция</td>
+                    <td>Деловой, уверенный</td>
+                    <td>Пастельные тона, улыбающаяся женщина</td>
+                    <td><span class="badge bg-warning text-dark">Частично</span></td>
+                </tr>
+                <tr>
+                    <td>Сообщение и текст</td>
+                    <td>Короткая чёткая выгода</td>
+                    <td>Текст длинный, имя и услуги есть</td>
+                    <td><span class="badge bg-warning text-dark">Частично</span></td>
+                </tr>
+                <tr>
+                    <td>Призыв к действию (CTA)</td>
+                    <td>Прямой CTA</td>
+                    <td>Отсутствует</td>
+                    <td><span class="badge bg-danger">Нет</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="text-danger">Необходимо добавить CTA для увеличения конверсии.</p>
+    </div>
+
+    <!-- Портрет ЦА -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-user"></i> Портрет целевой аудитории</h2>
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>Характеристика</th>
+                    <th>Целевая</th>
+                    <th>Реальная</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Возраст</td>
+                    <td>30–45 лет</td>
+                    <td>35–45 лет</td>
+                </tr>
+                <tr>
+                    <td>Пол</td>
+                    <td>Мужчины и женщины</td>
+                    <td>Преимущественно женщины</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Сильные/слабые стороны -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-thumbs-up"></i> Сильные и слабые стороны контента</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-3" style="background-color: #d1fae5; color: #065f46;">
+                    <ul>
+                        <li>Экспертная позиция и кейсы.</li>
+                        <li>Продуктовые предложения.</li>
+                        <li>Качественные длинные тексты.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3" style="background-color: #fee2e2; color: #991b1b;">
+                    <ul>
+                        <li>Отсутствие видео контента.</li>
+                        <li>Нет системного CTA/воронки.</li>
+                        <li>Непоследовательность в публикациях.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Гипотезы развития -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-lightbulb"></i> Гипотезы развития</h2>
+        <ol>
+            <li>Добавление коротких видео для увеличения охвата.</li>
+            <li>Запуск чек-листа увеличит конверсию.</li>
+            <li>Переделка обложки с CTA увеличит клики.</li>
+        </ol>
+    </div>
+
+    <!-- Контент-план -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-calendar-alt"></i> Контент-план</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>День</th>
+                    <th>Сегмент</th>
+                    <th>Тема</th>
+                    <th>Формат</th>
+                    <th>Функция</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Понедельник</td>
+                    <td>Предприниматели/СЕО</td>
+                    <td>Кейс ROI</td>
+                    <td>Видео 1–2 мин</td>
+                    <td>Привлечение</td>
+                </tr>
+                <tr>
+                    <td>Вторник</td>
+                    <td>HR/Рекрутеры</td>
+                    <td>ИИ-Рекрутер</td>
+                    <td>Фото + ссылка</td>
+                    <td>Конверсия</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Шаги и KPI -->
+    <div class="section-card">
+        <h2><i class="fa-solid fa-chart-pie"></i> KPI и прогресс выполнения</h2>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+        </div>
+        <ul>
+            <li>Новые подписчики</li>
+            <li>Охват постов и средние просмотры</li>
+            <li>CTR по ссылкам</li>
+        </ul>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="text-center mt-5 py-4" style="background-color: var(--deep-blue); color: white;">
+        <a href="https://vk.com/ai_first" target="_blank" class="text-white fw-bold text-decoration-underline">
+            ИИ для бизнеса: от аналитики до внедрения
+        </a>
+    </footer>
+</div>
+
+</body>
+</html>
