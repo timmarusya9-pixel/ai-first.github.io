@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчёт: Анализ и Стратегия Развития</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+          --deep-blue: #1e3a5f;
+          --soft-blue: #3b82f6;
+          --teal: #0d9488;
+          --lavender: #8b5cf6;
+          --light-bg: #f8fafc;
+          --success: #10b981;
+          --warning: #f59e0b;
+          --danger: #ef4444;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f1f5f9;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b5998 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 0 0 1.25rem 1.25rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+        }
+        .section-card h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--deep-blue);
+        }
+        .badge-soft-blue {
+            background-color: #eef2ff;
+            color: #4338ca;
+        }
+        .badge-success {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .badge-danger {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: var(--deep-blue);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>Анализ и стратегия развития сообщества</h1>
+    <p>Дата: 2023-10-01 | Ключевая метрика: Рост подписчиков на +40%</p>
+    <a href="https://vk.com/ai_first" class="text-white fw-bold text-decoration-underline">Перейти в сообщество</a>
+</div>
+
+<div class="container">
+    <div class="section-card">
+        <h2><i class="fas fa-chart-line"></i> Краткое резюме</h2>
+        <hr>
+        <p>Обложка и отсутствие видеоконтента/лид-магнитов — главные барьеры роста подписчиков; исправление обложки, добавление коротких видео и запуск лид-магнита помогут в привлечении аудитории.</p>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-image"></i> Анализ обложки</h2>
+        <hr>
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>Блок</th>
+                    <th>Соответствие</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Визуальный тон и эмоция</td>
+                    <td><span class="badge badge-danger">Частично</span></td>
+                </tr>
+                <tr>
+                    <td>Сообщение и текст</td>
+                    <td><span class="badge badge-danger">Частично</span></td>
+                </tr>
+                <tr>
+                    <td>Призыв к действию (CTA)</td>
+                    <td><span class="badge badge-danger">Нет</span></td>
+                </tr>
+                <tr>
+                    <td>Техническая адаптация под ВК</td>
+                    <td><span class="badge badge-danger">Частично</span></td>
+                </tr>
+                <tr>
+                    <td>Отстройка от демографии VK</td>
+                    <td><span class="badge badge-success">Частично</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Требует доработки — текущая обложка отображает экспертность, но не конвертирует и частично не адаптирована под мобильные и целевой сегмент.</p>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-user"></i> Портрет ЦА</h2>
+        <hr>
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>Характеристика</th>
+                    <th>Целевая аудитория</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Возраст</td>
+                    <td>30–45 лет</td>
+                </tr>
+                <tr>
+                    <td>Роль</td>
+                    <td>Владелец бизнеса, руководитель</td>
+                </tr>
+                <tr>
+                    <td>География</td>
+                    <td>Топ-город — Вологда</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-balance-scale"></i> Сильные и слабые стороны контента</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-3" style="background-color: #d1fae5;">
+                    <h6>Сильные стороны:</h6>
+                    <ul>
+                        <li>Чёткая экспертная позиция</li>
+                        <li>Продуктовые предложения</li>
+                        <li>Качественные длинные тексты</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3" style="background-color: #fee2e2;">
+                    <h6>Слабые стороны:</h6>
+                    <ul>
+                        <li>Отсутствие видеоконтента</li>
+                        <li>Нет системного CTA</li>
+                        <li>Непоследовательность публикаций</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-lightbulb"></i> Идеи от конкурентов</h2>
+        <hr>
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>Идеи</th>
+                    <th>Ожидаемый эффект</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Серия видео «AI в 2 минуты»</td>
+                    <td>Увеличение охвата и репостов</td>
+                </tr>
+                <tr>
+                    <td>Лид-магнит в формате doc</td>
+                    <td>Увеличение подписки на 5–15%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-stream"></i> Контент-план</h2>
+        <hr>
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>День</th>
+                    <th>Сегмент</th>
+                    <th>Тема</th>
+                    <th>Формат</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Понедельник</td>
+                    <td>Предприниматели/СЕО</td>
+                    <td>Кейс ROI</td>
+                    <td>Видео 1-2 мин</td>
+                </tr>
+                <tr>
+                    <td>Вторник</td>
+                    <td>HR/Рекрутеры</td>
+                    <td>Продукт</td>
+                    <td>Фото + link</td>
+                </tr>
+                <tr>
+                    <td>Среда</td>
+                    <td>Аналитики/техлиды</td>
+                    <td>Практический гайд</td>
+                    <td>Doc (лид-магнит)</td>
+                </tr>
+                <tr>
+                    <td>Четверг</td>
+                    <td>Все</td>
+                    <td>Образовательный</td>
+                    <td>Карусель</td>
+                </tr>
+                <tr>
+                    <td>Пятница</td>
+                    <td>Предприниматели</td>
+                    <td>Вебинар/мероприятие</td>
+                    <td>Анонс</td>
+                </tr>
+                <tr>
+                    <td>Суббота</td>
+                    <td>Клиенты/теплые лиды</td>
+                    <td>Отзыв/кейсы</td>
+                    <td>Текст + фото</td>
+                </tr>
+                <tr>
+                    <td>Воскресенье</td>
+                    <td>Все</td>
+                    <td>Вовлечение</td>
+                    <td>Опрос</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-tasks"></i> Шаги и KPI</h2>
+        <hr>
+        <ul>
+            <li>Новые подписчики: <span class="badge badge-soft-blue">прирост +40%</span></li>
+            <li>Охват постов</li>
+            <li>CTR по ссылкам</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="https://vk.com/ai_first" target="_blank" class="text-white fw-bold text-decoration-underline">ИИ для бизнеса: от аналитики до внедрения</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+    // Example: Initialize charts here if data was available
+</script>
+
+</body>
+</html>
