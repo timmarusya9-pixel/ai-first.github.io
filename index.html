@@ -1,0 +1,182 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчет по контент-стратегии</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #3b5998 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 1.25rem 1.25rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            margin: 20px 0;
+            padding: 20px;
+        }
+        .metric-badge {
+            background: #eef2ff;
+            color: #4338ca;
+            border-radius: 1rem;
+            padding: 5px 10px;
+        }
+        .positive {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+        .negative {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+        .table-custom thead th {
+            background-color: #f1f5f9;
+        }
+        .footer {
+            background: var(--deep-blue);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero text-center">
+    <h1>Отчет по контент-стратегии</h1>
+    <p>Дата: <strong>2023</strong></p>
+    <p>Ключевая метрика: Увеличение подписчиков на <strong>40%</strong></p>
+    <a href="https://vk.com/ai_first" target="_blank" class="text-white fw-bold text-decoration-underline">ИИ для бизнеса: от аналитики до внедрения</a>
+</div>
+
+<div class="container">
+    <div class="section-card">
+        <h2><i class="fas fa-check-circle"></i> Краткое резюме</h2>
+        <p>- Обложка формально отражает экспертность, но не выполняет конверсионной функции. <br>
+           - Сообщество хорошо позиционировано как экспертный источник, но не хватает форматов для привлечения.</p>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-chart-bar"></i> Анализ обложки</h2>
+        <h6>Бизнес‑задача для обложки</h6>
+        <p>Увеличить количество подписчиков на <strong>40%</strong>.</p>
+        <h6>Демография</h6>
+        <p>Целевая аудитория: эксперты, предприниматели 30–45 лет. Но реальная аудитория — преимущественно женщины 35–45.</p>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-list-ul"></i> Профиль идеального зрителя</h2>
+        <ol>
+            <li>Возраст: 30–45 лет.</li>
+            <li>Роль: владелец бизнеса или руководитель.</li>
+            <li>Мотивация: сокращение затрат и время.</li>
+            <li>Ожидание: конкретные кейсы и решения.</li>
+            <li>Восприятие: строгий дизайн и четкая выгода.</li>
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-thumbs-up"></i> Сильные и слабые стороны</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="positive">
+                    <h5>Сильные стороны:</h5>
+                    <ul>
+                        <li>Четкая экспертная позиция.</li>
+                        <li>Наличие продуктовых предложений.</li>
+                        <li>Качественные длинные тексты.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="negative">
+                    <h5>Слабые стороны:</h5>
+                    <ul>
+                        <li>Отсутствие видеоформатов.</li>
+                        <li>Нет системного CTA.</li>
+                        <li>Отсутствие последовательности публикаций.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-lightbulb"></i> Гипотезы для развития сообщества</h2>
+        <h6>Стратегические гипотезы:</h6>
+        <ol>
+            <li>Добавить короткие видео.</li>
+            <li>Запустить лид-магнит.</li>
+            <li>Переделать обложку с CTA.</li>
+            <li>Таргетированный тест.</li>
+            <li>Обновить закрепленный пост.</li>
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h2><i class="fas fa-calendar-alt"></i> Контент-план на типовую неделю</h2>
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Сегмент</th>
+                    <th>Тема</th>
+                    <th>Заголовок</th>
+                    <th>Формат</th>
+                    <th>Тип контента</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Предприниматели</td>
+                    <td>Кейс ROI</td>
+                    <td>Сократили время на 70%</td>
+                    <td>Видео 1–2 мин</td>
+                    <td>Кейс</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>HR/Рекрутеры</td>
+                    <td>Продукт</td>
+                    <td>ИИ‑Рекрутер за 10 минут</td>
+                    <td>Фото + ссылка</td>
+                    <td>Продуктовый</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Аналитики</td>
+                    <td>Практический гайд</td>
+                    <td>Чек‑лист для пилота ИИ</td>
+                    <td>Doc + фото</td>
+                    <td>Лид-магнит</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="https://vk.com/ai_first" target="_blank" class="text-white fw-bold">ИИ для бизнеса: от аналитики до внедрения</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.5.1/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```
