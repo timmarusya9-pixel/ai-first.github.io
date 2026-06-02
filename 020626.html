@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Инфографика отчёта — ИИ для бизнеса</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root{
+      --deep-blue:#1e3a5f;
+      --soft-blue:#3b82f6;
+      --teal:#0d9488;
+      --lavender:#8b5cf6;
+      --light-bg:#f8fafc;
+      --success:#10b981;
+      --warning:#f59e0b;
+      --danger:#ef4444;
+      --page-bg:#f1f5f9;
+    }
+    body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--page-bg);color:#0f172a;}
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#3b5998 100%);color:#fff;border-bottom-left-radius:2rem;border-bottom-right-radius:2rem;box-shadow:0 12px 30px rgba(30,58,95,.18)}
+    .section-card{background:#fff;border-radius:1.25rem;box-shadow:0 8px 20px rgba(0,0,0,.04);border:1px solid rgba(148,163,184,.18)}
+    .section-title{color:var(--deep-blue);font-weight:800}
+    .divider{height:1px;background:linear-gradient(90deg,rgba(59,130,246,.35),rgba(139,92,246,.2),transparent);}
+    .metric-badge{background:#eef2ff;color:#4338ca;border-radius:999px;padding:.45rem .8rem;font-weight:700;font-size:.85rem;display:inline-flex;align-items:center;gap:.4rem}
+    .good-pill{background:#d1fae5;color:#065f46;border-radius:999px;padding:.35rem .7rem;font-weight:700}
+    .bad-pill{background:#fee2e2;color:#991b1b;border-radius:999px;padding:.35rem .7rem;font-weight:700}
+    .table-custom thead th{background:#f1f5f9;color:#334155}
+    .small-muted{color:#64748b;font-size:.92rem}
+    .icon-circle{width:42px;height:42px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:#eff6ff;color:var(--soft-blue)}
+    .stat-box{border-radius:1rem;background:linear-gradient(180deg,#fff, #f8fafc);border:1px solid rgba(148,163,184,.18)}
+    .footer-link{color:#fff;text-decoration:underline;font-weight:700}
+    .progress{height:12px;border-radius:999px;background:#e2e8f0}
+    .progress-bar{border-radius:999px}
+    .chart-wrap{position:relative;height:320px}
+    @media (max-width: 768px){
+      .chart-wrap{height:280px}
+      .hero h1{font-size:1.6rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero py-4 py-md-5 mb-4">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+        <div>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="metric-badge"><i class="fa-solid fa-chart-line"></i> Отчёт по сообществу</span>
+            <span class="metric-badge"><i class="fa-solid fa-calendar-days"></i> 02 06 26</span>
+          </div>
+          <h1 class="fw-bold mb-2">Инфографика анализа обложки, контента и KPI</h1>
+          <p class="mb-0 opacity-90">ИИ‑трансформация бизнеса с Ольгой Кошелевой: от аналитики до внедрения</p>
+        </div>
+        <div class="text-md-end">
+          <div class="small text-white-50 mb-1">Ключевая метрика</div>
+          <div class="display-6 fw-bold">+40%</div>
+          <div class="small text-white-75">рост подписчиков — целевой KPI для обложки</div>
+          <div class="mt-3">
+            <a href="https://vk.com/ai_first" target="_blank" class="btn btn-light btn-lg rounded-pill fw-semibold">
+              <i class="fa-brands fa-vk me-2"></i>ИИ для бизнеса: от аналитики до внедрения
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pb-4">
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-clipboard-check"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Краткое резюме</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="row g-3 mt-1">
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 bg-light border h-100">
+            <div class="good-pill d-inline-block mb-2"><i class="fa-solid fa-circle-check me-1"></i>Сильные стороны</div>
+            <p class="mb-0">Сообщество имеет сильный экспертный контент (кейсы, продукты), но малый охват и отсутствие видео/коротких форматов — это главная причина стагнации подписок.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#fff7ed;">
+            <div class="bad-pill d-inline-block mb-2"><i class="fa-solid fa-triangle-exclamation me-1"></i>Вердикт</div>
+            <p class="mb-0">Обложка выглядит профессионально и частично соответствует ЦА, но не даёт явного преимущества и CTA — требуется доработка.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-image"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Анализ обложки</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-custom align-middle mb-0">
+          <thead>
+            <tr>
+              <th style="width:22%">Блок</th>
+              <th>Ожидание ЦА</th>
+              <th>Что на обложке</th>
+              <th style="width:14%">Соответствие</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-semibold">Визуальный тон и эмоция</td>
+              <td>Сдержанный, деловой, уверенный тон; авторитетный портрет эксперта.</td>
+              <td>Пастельные фиолетово‑голубые градиенты, улыбающаяся женщина, вдохновляющий профессиональный тон.</td>
+              <td><span class="badge text-bg-warning rounded-pill">частично</span></td>
+            </tr>
+            <tr>
+              <td class="fw-semibold">Сообщение и текст</td>
+              <td>Один короткий чёткий месседж‑выгода.</td>
+              <td>«ИИ‑трансформация бизнеса с Ольгой Кошелевой Автоматизация Консультация Менторинг».</td>
+              <td><span class="badge text-bg-warning rounded-pill">частично</span></td>
+            </tr>
+            <tr>
+              <td class="fw-semibold">Призыв к действию (CTA)</td>
+              <td>Явный CTA к подписке или записи на диагностику.</td>
+              <td>CTA отсутствует.</td>
+              <td><span class="badge text-bg-danger rounded-pill">нет</span></td>
+            </tr>
+            <tr>
+              <td class="fw-semibold">Техническая адаптация под ВК</td>
+              <td>Безопасная зона, читаемость, отсутствие перекрытий.</td>
+              <td>Риск перекрытия аватаркой, обрезки на мобильных, слабая читаемость в тёмной теме.</td>
+              <td><span class="badge text-bg-warning rounded-pill">частично</span></td>
+            </tr>
+            <tr>
+              <td class="fw-semibold">Отстройка от демографии VK</td>
+              <td>Широкая база экспертов/предпринимателей 30–45.</td>
+              <td>Женский портрет резонирует с женщинами 35–45, но визуал слишком мягкий для широкой ЦА.</td>
+              <td><span class="badge text-bg-warning rounded-pill">частично</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row g-3 mt-2">
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#f8fafc;">
+            <div class="good-pill d-inline-block mb-2">Итоговый вердикт</div>
+            <p class="mb-0">Требует доработки. Хороший экспертный визуал, но нет CTA, слабая читаемость и риски мобильной обрезки.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#fff7ed;">
+            <div class="bad-pill d-inline-block mb-2">Конкретные правки</div>
+            <ul class="mb-0 ps-3">
+              <li>Заменить фото на деловой сеттинг.</li>
+              <li>Сделать заголовок‑выгоду с цифрой ROI.</li>
+              <li>Добавить CTA справа/внизу.</li>
+              <li>Сменить гамму на более корпоративную.</li>
+              <li>Сместить элементы в безопасную зону 600×300 px.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Портрет ЦА</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="table-responsive">
+            <table class="table table-bordered table-custom align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Параметр</th>
+                  <th>Идеальный покупатель</th>
+                  <th>Реальный подписчик</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="fw-semibold">Возраст</td><td>30–45</td><td>Женщины 35–45, разброс по 21–24 и 27–30</td></tr>
+                <tr><td class="fw-semibold">Роль</td><td>Руководитель / владелец бизнеса / HR‑рук / операционный менеджер</td><td>Менеджер / HR / операционный руководитель</td></tr>
+                <tr><td class="fw-semibold">Мотивация</td><td>Автоматизация, сокращение операционной нагрузки</td><td>Готовые решения, диагностика, AI‑рекрутер</td></tr>
+                <tr><td class="fw-semibold">Ценность</td><td>Практические кейсы и быстрый ROI</td><td>Практические инструкции и экономия времени</td></tr>
+                <tr><td class="fw-semibold">Ожидание от дизайна</td><td>Профессиональный, сдержанный, корпоративный</td><td>Резонирует с женской 35–45 аудиторией</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="stat-box p-3 h-100">
+            <h3 class="h6 fw-bold mb-3"><i class="fa-solid fa-chart-pie me-2 text-primary"></i>Демо подписчиков</h3>
+            <div class="chart-wrap"><canvas id="audienceChart"></canvas></div>
+            <div class="small-muted mt-2">Небольшая выборка: доминирует Женщины 35–45 (5), далее 21–24 и 27–30.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#d1fae5;color:#065f46;">
+            <strong>Совпадения:</strong> возраст 30–45 и интерес к практическим кейсам/ROI совпадают.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#fee2e2;color:#991b1b;">
+            <strong>Расхождения:</strong> реальная активность более женская и смещена в сторону HR/операций; малое число подписчиков (18) создаёт статистическую погрешность.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-chart-column"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Контент и эффективность</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="stat-box p-3 h-100">
+            <h3 class="h6 fw-bold mb-3">Лучшие дни вовлечённости</h3>
+            <div class="chart-wrap"><canvas id="weekdayChart"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="stat-box p-3 h-100">
+            <h3 class="h6 fw-bold mb-3">Форматы и время</h3>
+            <div class="chart-wrap"><canvas id="timeChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#f8fafc;">
+            <div class="good-pill d-inline-block mb-2">Что работает</div>
+            <ul class="mb-0 ps-3">
+              <li>Фото‑посты с лично‑экспертным текстом дают наибольший ER и просмотры.</li>
+              <li>Посты с цифрами и конкретными выгодами («4 минуты вместо 3 часов», «95% времени»).</li>
+              <li>Продуктовые ссылки и призывы писать в личные сообщения.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#fff7ed;">
+            <div class="bad-pill d-inline-block mb-2">Что проваливается</div>
+            <ul class="mb-0 ps-3">
+              <li>Слишком общий контент без сильного хука или конкретной выгоды.</li>
+              <li>Нет видео/коротких форматов.</li>
+              <li>Выходы в выходные и отсутствие визуального разнообразия.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Что взять от конкурентов</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-custom align-middle mb-0">
+          <thead>
+            <tr>
+              <th>Идея</th>
+              <th>Описание</th>
+              <th>Гипотеза адаптации</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-semibold">Короткие демонстрационные видео</td>
+              <td>1–2 минуты с кейсом «до/после» и чётким CTA.</td>
+              <td>ER вырастет на 30–50%, а приток новых подписчиков — +15–25% за 2 месяца.</td>
+            </tr>
+            <tr>
+              <td class="fw-semibold">Интерактив</td>
+              <td>Розыгрыши, вовлекающие посты и челленджи.</td>
+              <td>Повышение вовлечённости и возвратов в сообщество.</td>
+            </tr>
+            <tr>
+              <td class="fw-semibold">Демонстрации продукта</td>
+              <td>Скрин‑демо AI‑рекрутера или walkthrough продукта.</td>
+              <td>Рост доверия к продукту и ускорение конверсии в лид.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-bullseye"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Tone of voice, время и гипотезы</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="p-3 rounded-4 border h-100 bg-light">
+            <h3 class="h6 fw-bold">Tone of voice</h3>
+            <p class="mb-0">Прагматичный, уверенный, прозрачный — без хайпа и «магии».</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-3 rounded-4 border h-100 bg-light">
+            <h3 class="h6 fw-bold">Лучшее окно публикаций</h3>
+            <p class="mb-0">09:30–11:30 и 14:00–16:00. Рекомендованный час — 10:00.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-3 rounded-4 border h-100 bg-light">
+            <h3 class="h6 fw-bold">Лучшие/худшие дни</h3>
+            <p class="mb-0">Лучший день: Понедельник. Второй — Пятница. Худшие: Суббота и Воскресенье.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#f8fafc;">
+            <h3 class="h6 fw-bold mb-3">Стратегические гипотезы</h3>
+            <ol class="mb-0 ps-3">
+              <li>Добавить видео‑рубрику «2‑minute demo/case».</li>
+              <li>Упростить обложку и добавить CTA.</li>
+              <li>Ввести лид‑магнит и посадочную страницу.</li>
+              <li>Пилот таргетированной рекламы на look‑alike аудитории.</li>
+              <li>Внедрить еженедельный контент‑фрейм.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#fff7ed;">
+            <h3 class="h6 fw-bold mb-3">A/B‑тесты в первую очередь</h3>
+            <ul class="mb-0 ps-3">
+              <li>Обложка A/B: текущая vs новая с сильным CTA.</li>
+              <li>Формат поста: фото vs короткое видео (1–2 мин).</li>
+              <li>Время публикации: Пн 10:00 vs Пн 14:00.</li>
+              <li>Заголовки: цифра/выгода vs экспертный/философский.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-calendar-week"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Контент‑план на типовую неделю</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-custom align-middle mb-0">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>День</th>
+              <th>Сегмент</th>
+              <th>Тема</th>
+              <th>Заголовок</th>
+              <th>Формат</th>
+              <th>Тип контента</th>
+              <th>Функция</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Пн</td><td>Руководители/владельцы</td><td>Вводный кейс с цифрой</td><td>Как мы сократили 40% времени отдела продаж — кейс</td><td>Видео (1–2 мин) / мини‑анимация</td><td>Демонстрация результата</td><td>Привлечение</td></tr>
+            <tr><td>2</td><td>Вт</td><td>HR/руководители по персоналу</td><td>Продукт (AI‑Рекрутер)</td><td>4 минуты вместо 3 часов — упаковка вакансии</td><td>Фото + карусель</td><td>Продуктовый кейс</td><td>Прогрев → конверсия</td></tr>
+            <tr><td>3</td><td>Ср</td><td>Операционные менеджеры/аналитики</td><td>Практический гайд</td><td>3 шага к безопасной автоматизации процесса</td><td>Текст + инфографика</td><td>Обучение/полезность</td><td>Вовлечение/удержание</td></tr>
+            <tr><td>4</td><td>Чт</td><td>Все</td><td>Бесплатный чек‑лист/mini‑diagnostics</td><td>Бесплатно: 1‑страничная AI‑диагностика — где у вас реальная экономия</td><td>Пост с кнопкой/ссылкой</td><td>Лид‑магнит</td><td>Конверсия</td></tr>
+            <tr><td>5</td><td>Пт</td><td>Руководители/подписчики</td><td>Личный пост автора</td><td>Почему я не верю в волшебные кнопки — честно об ожиданиях</td><td>Фото + длинный пост</td><td>Бренд/экспертность</td><td>Вовлечение/удержание</td></tr>
+            <tr><td>6</td><td>Сб</td><td>Лёгкое взаимодействие</td><td>Опрос/мини‑видео</td><td>Что вам важнее в автоматизации — скорость или точность?</td><td>Опрос / сторис</td><td>Интерактив</td><td>Вовлечение</td></tr>
+            <tr><td>7</td><td>Вс</td><td>Релакс</td><td>Подборка полезных ссылок</td><td>Топ 5 статей/инструментов для управленца</td><td>Карусель/ссылка</td><td>Поддержка интереса</td><td>Удержание</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <div class="icon-circle"><i class="fa-solid fa-flag-checkered"></i></div>
+        <div>
+          <h2 class="section-title h4 mb-1">Шаги и KPI</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-4">
+          <div class="p-3 rounded-4 border h-100 bg-light">
+            <div class="d-flex justify-content-between mb-2"><strong>Новые подписчики</strong><span>+10–20%</span></div>
+            <div class="progress"><div class="progress-bar bg-success" style="width:70%"></div></div>
+            <div class="small-muted mt-2">Целевое изменение за 2 недели по тесту с рекламой.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-3 rounded-4 border h-100 bg-light">
+            <div class="d-flex justify-content-between mb-2"><strong>Reach и уникальные посетители</strong><span>+50%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:50%;background:var(--soft-blue)"></div></div>
+            <div class="small-muted mt-2">Ожидаемый рост при публикации видео.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-3 rounded-4 border h-100 bg-light">
+            <div class="d-flex justify-content-between mb-2"><strong>ER постов</strong><span>+30%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:60%;background:var(--teal)"></div></div>
+            <div class="small-muted mt-2">Рост для видеоконтента и структурированных кейсов.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-2">
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#f8fafc;">
+            <h3 class="h6 fw-bold mb-2">Следующие шаги</h3>
+            <ol class="mb-0 ps-3">
+              <li>Сделать новую обложку с CTA и безопасной композицией.</li>
+              <li>Подготовить и опубликовать 2 видеодемока (1–2 мин).</li>
+              <li>Поставить в закреп лид‑магнит и ссылку на запись.</li>
+              <li>Запустить небольшой таргет на аудиторию 30–45.</li>
+              <li>A/B тест обложки и форматов.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-3 rounded-4 border h-100" style="background:#fff7ed;">
+            <h3 class="h6 fw-bold mb-2">Приоритет на 2 недели</h3>
+            <ul class="mb-0 ps-3">
+              <li>Новая обложка с CTA.</li>
+              <li>2 видеодемока.</li>
+              <li>Лид‑магнит в закреп.</li>
+              <li>Мини‑таргет.</li>
+              <li>A/B тест.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 mt-2" style="background:linear-gradient(135deg,#1e3a5f 0%,#243b6b 100%);border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;">
+    <div class="container text-center text-white">
+      <div class="mb-2 small text-white-50">Сообщество</div>
+      <a href="https://vk.com/ai_first" target="_blank" class="footer-link">ИИ для бизнеса: от аналитики до внедрения</a>
+    </div>
+  </footer>
+
+  <script>
+    const commonLegend = {
+      position: 'bottom',
+      labels: { usePointStyle: true, boxWidth: 10, boxHeight: 10, padding: 16 }
+    };
+    const baseOptions = {
+      responsive: true,
+      maintainAspectRatio: true,
+      animation: { duration: 1200, easing: 'easeOutQuart' },
+      plugins: { legend: commonLegend }
+    };
+
+    new Chart(document.getElementById('audienceChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Женщины 35–45', '21–24', '27–30'],
+        datasets: [{ data: [5, 1, 1], backgroundColor: ['#3b82f6', '#0d9488', '#8b5cf6'], borderWidth: 0 }]
+      },
+      options: { ...baseOptions, cutout: '68%' }
+    });
+
+    new Chart(document.getElementById('weekdayChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+        datasets: [{ label: 'Engagement index', data: [5, 3.2, 2.1, 1.8, 2.3, 0, 0], backgroundColor: ['#1e3a5f','#3b82f6','#60a5fa','#0d9488','#8b5cf6','#cbd5e1','#cbd5e1'], borderRadius: 10 }]
+      },
+      options: { ...baseOptions, scales: { y: { beginAtZero: true, grid: { color: '#e2e8f0' } }, x: { grid: { display: false } } } }
+    });
+
+    new Chart(document.getElementById('timeChart'), {
+      type: 'line',
+      data: {
+        labels: ['09:00', '10:00', '11:00', '14:00', '16:00', '18:00'],
+        datasets: [{ label: 'Рекомендованная активность', data: [3, 5, 4.2, 3.4, 2.8, 1.2], borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,.12)', tension: .35, fill: true, pointRadius: 4, pointBackgroundColor: '#0d9488' }]
+      },
+      options: { ...baseOptions, scales: { y: { beginAtZero: true, grid: { color: '#e2e8f0' } }, x: { grid: { display: false } } } }
+    });
+  </script>
+</body>
+</html>
